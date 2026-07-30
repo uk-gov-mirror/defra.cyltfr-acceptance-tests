@@ -7,9 +7,9 @@ const debug = process.env.DEBUG
 /* handy shortcuts for running tests against the different environment from local machine.
 NOTE: on pushing to branch and running from jenkins, the below envars shuld always be commented out
 otherwise the test run maybe running against wrong environment */
-// global.baseUrl = 'https://ltf-dev.aws.defra.cloud'
-// global.baseUrl = 'https://ltf-tst.aws.defra.cloud'
-// global.baseUrl = 'https://ltf-pre.aws.defra.cloud'
+// global.baseUrl = 'https://ltf2-dev.aws-int.defra.cloud'
+// global.baseUrl = 'https://ltf2-tst.aws-int.defra.cloud'
+// global.baseUrl = 'https://ltf2-pre.aws.-intdefra.cloud'
 // global.baseUrl = 'http://localhost:3000'
 
 global.baseUrl = process.env.CYLTFR_APP_URL

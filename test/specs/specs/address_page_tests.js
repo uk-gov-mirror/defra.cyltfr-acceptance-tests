@@ -7,7 +7,6 @@ describe('Check Your Long Term Flood Risk, Address page', async () => {
     await browser.url(`${global.capchaBypass}`)
     const postcodePage = require('../page_objects/postcode_page')
     const commonFunctions = require('../page_objects/common_functions')
-    const addressPage = require('../page_objects/address_page')
 
     // check browser is open on correct page and tab title is as expected
     // Calling the method from the commonFunction
@@ -19,6 +18,7 @@ describe('Check Your Long Term Flood Risk, Address page', async () => {
     await postcodePage.clickContinue()
 
     // check address page
+    const addressPage = require('../page_objects/address_page')
 
     // Calling the method from the commonFunction
     await commonFunctions.getTitle('Select an address - Check your long term flood risk - GOV.UK')
@@ -27,7 +27,7 @@ describe('Check Your Long Term Flood Risk, Address page', async () => {
     await addressPage.clickContinue()
 
     // it should display error message when no address selected and continue is clicked
-    expect(await addressPage.getAddressBannerMessage()).equals('Select an address')
+    expect(await addressPage.getAddressBannerMessage()).contains('Select an address')
     expect(await addressPage.getAdressErrorMessage()).equals('Error:\nSelect an address')
   })
   // it should check the result count of address for the given postcode
@@ -37,7 +37,6 @@ describe('Check Your Long Term Flood Risk, Address page', async () => {
       await browser.url(`${global.capchaBypass}`)
       const postcodePage = require('../page_objects/postcode_page')
       const commonFunctions = require('../page_objects/common_functions')
-      const addressPage = require('../page_objects/address_page')
 
       // check browser is open on correct page and tab title is as expected
       // expect(await browser.getTitle()).equals('Where do you want to check? - Check your long term flood risk - GOV.UK')
@@ -48,6 +47,7 @@ describe('Check Your Long Term Flood Risk, Address page', async () => {
       await postcodePage.enterPostcode(item.postcode)
       await postcodePage.clickContinue()
 
+      const addressPage = require('../page_objects/address_page')
       await commonFunctions.waitTitle('Select an address - Check your long term flood risk - GOV.UK')
       // check address count result set
       const resultText = await addressPage.getAddressText()

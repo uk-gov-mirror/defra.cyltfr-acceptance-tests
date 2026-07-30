@@ -64,7 +64,7 @@ describe('Postcode page sad path tests', async () => {
       const postcodeErrorPage = require('../page_objects/postcode_error_page')
 
       // check the expected error page is produced
-      await commonFunctions.waitTitle('Check your long term flood risk - Check your long term flood risk - GOV.UK')
+      await commonFunctions.waitTitle('This service is for postcodes in England only - Check your long term flood risk - GOV.UK')
       expect(await postcodeErrorPage.getPageHeading()).equals('This service is for postcodes in England only')
       expect(await browser.getUrl()).contains(`${baseUrl}/england-only`)
     })
@@ -90,7 +90,7 @@ describe('Postcode page sad path tests', async () => {
       const postcodeErrorPage = require('../page_objects/postcode_error_page')
 
       // check the expected error page is produced
-      await commonFunctions.waitTitle('Check your long term flood risk - Check your long term flood risk - GOV.UK')
+      await commonFunctions.waitTitle('This service is for postcodes in England only - Check your long term flood risk - GOV.UK')
       expect(await postcodeErrorPage.getPageHeading()).equals('This service is for postcodes in England only')
       expect(await browser.getUrl()).contains(`${baseUrl}/england-only`)
     })
@@ -114,7 +114,7 @@ describe('Postcode page sad path tests', async () => {
       await postcodePage.contBtn.click()
       const postcodeErrorPage = require('../page_objects/postcode_error_page')
 
-      await commonFunctions.waitTitle('Check your long term flood risk - Check your long term flood risk - GOV.UK')
+      await commonFunctions.waitTitle('This service is for postcodes in England only - Check your long term flood risk - GOV.UK')
       expect(await postcodeErrorPage.getPageHeading()).equals('This service is for postcodes in England only')
       // expect(await browser.getTitle()).equals('Check your long term flood risk - Check your long term flood risk - GOV.UK')
       expect(await browser.getUrl()).contains(`${baseUrl}/england-only`)
