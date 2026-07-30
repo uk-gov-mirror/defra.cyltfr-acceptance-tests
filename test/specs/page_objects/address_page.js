@@ -10,6 +10,7 @@ class AddressPage {
   get postcodeChange () { return $("//a[normalize-space()='Change']") }
   get selectaddressTitle () { return $("//label[normalize-space()='Select an address']") }
   get addressCombo () { return $("//select[@id='address']") }
+  get triageDefaultRadio () { return $("//input[@id='not-spec']") }
   get addressError () { return $("//p[@id='address-error']") }
   get addressContinueButton () { return $('#address-page form button[type=submit]') }
   get bannerError () { return $("ul[class='govuk-list govuk-error-summary__list']") }
@@ -18,8 +19,13 @@ class AddressPage {
 
   // METHODS AND FUNCTIONS
 
+  async selectDefaultTriageAnswer () {
+    return (await this.triageDefaultRadio).click()
+  }
+
   async selectAddress (item) {
     // await (await this.addressCombo).waitForDisplayed()
+    await this.selectDefaultTriageAnswer()
     return (await this.addressCombo).selectByAttribute('value', item)
   }
 
