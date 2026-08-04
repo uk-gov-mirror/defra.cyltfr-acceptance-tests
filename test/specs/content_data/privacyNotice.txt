@@ -17,7 +17,7 @@ improve the service by monitoring how it's used and analysing feedback
 respond to any feedback you provide or invite you to take part in user research, if you ask us to
 protect the service from spam and abuse
 Where your personal data is processed and stored
-We design, build and run our systems to make sure your data is as safe as possible at all stages, both while it’s processed and when it’s stored.
+We design, build and run our systems to make sure your data is as safe as possible at all stages, both while it's processed and when it's stored.
 Your personal data is stored and processes securely on servers in the UK and Ireland.
 Who your data might be shared with
 We may share your data or disclose information because of a law, regulation or court order, and to protect our interests and legal rights.
